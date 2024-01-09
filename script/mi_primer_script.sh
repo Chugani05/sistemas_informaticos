@@ -8,7 +8,7 @@
 # Objetivo: hacer pequeñas pruebas con scripts
 #
 # Entrada: ninguna
-# Salida: ninguna
+# Salida: mensaje
 #
 # Historial:
 #   2023-12-18: versión 1

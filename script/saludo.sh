@@ -5,7 +5,7 @@
 # Nombre: script.sh
 # Autor: Rashi Chugani <chugani205@gmail.com>
 #
-# Objetivo: hacer pequeñas pruebas con scripts
+# Objetivo: mostrar un saludo en pantalla
 #
 # Entrada: nombre, apellido y curso
 # Salida: saludo
