@@ -2,7 +2,7 @@
 
 ############################################
 #
-# Nombre: ej04-día_semana.sh
+# Nombre: ej05-calcula_segundos.sh
 # Autor: Rashi Chugani <chugani205@gmail.com>
 #
 # Objetivo: convertir el tiempo a segundos
@@ -11,7 +11,7 @@
 # Salida: mensaje
 #
 # Historial:
-#   2024-01-08: versión 1
+#   2024-01-11: versión 1
 ############################################
 
 dias=$1
