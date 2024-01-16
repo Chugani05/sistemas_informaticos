@@ -9,5 +9,7 @@
 # Entrada: 1, 2 y 3
 # Salida: resta
 #
-# Versión: 2024-01-08: versión 1
+# Historial: 
+#   2024-01-08: versión 1.0
+#   2024-01-08: versión 2.0
 ############################################

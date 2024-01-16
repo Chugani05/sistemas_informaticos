@@ -15,7 +15,7 @@ do
     echo "El valor de i is $i"
 done
 
-# Bucle
+# Bucle puede ser cualquier valor
 for i in "Monaco" "Francia" "Reino Unido" "Italia"
 do 
      echo "El país es $i"
