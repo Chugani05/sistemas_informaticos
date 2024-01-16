@@ -1,7 +1,6 @@
 #!/bin/bash
 
 ############################################
-#
 # Nombre: suma.sh
 # Autor: Rashi Chugani <chugani205@gmail.com>
 #
@@ -10,8 +9,7 @@
 # Entrada: 1, 2 y 3
 # Salida: suma
 #
-# Historial:
-#   2023-12-18: versión 1
+# Versión: 2023-12-18: versión 1
 ############################################
 
 resultado=$(($1+$2))

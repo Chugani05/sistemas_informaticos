@@ -1,7 +1,6 @@
 #!/bin/bash
 
 ############################################
-#
 # Nombre: ej05-calcula_segundos.sh
 # Autor: Rashi Chugani <chugani205@gmail.com>
 #
@@ -10,8 +9,7 @@
 # Entrada: 1: días, 2: horas, 3: minutos, 4: segundos
 # Salida: mensaje
 #
-# Historial:
-#   2024-01-11: versión 1
+# Versión: 2024-01-11: versión 1
 ############################################
 
 dias=$1

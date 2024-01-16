@@ -1,7 +1,6 @@
 #!/bin/bash
 
 ############################################
-#
 # Nombre: script.sh
 # Autor: Rashi Chugani <chugani205@gmail.com>
 #
@@ -10,8 +9,7 @@
 # Entrada: nombre, apellido y curso
 # Salida: saludo
 #
-# Historial:
-#   2023-12-18: versión 1
+# Versión: 2023-12-18: versión 1
 ############################################
 
 nombre="Rashi"

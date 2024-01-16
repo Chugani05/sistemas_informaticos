@@ -1,7 +1,6 @@
 #!/bin/bash
 
 ############################################
-#
 # Nombre: ej03-gradosC2F.sh
 # Autor: Rashi Chugani <chugani205@gmail.com>
 #
@@ -10,8 +9,7 @@
 # Entrada: 1: celsius
 # Salida: mensaje
 #
-# Historial:
-#   2024-01-11: versión 2
+# Versión: 2024-01-11: versión 2
 ############################################
 
 if [ $# -eq 0 ]; then

@@ -1,7 +1,6 @@
 #!/bin/bash
 
 ############################################
-#
 # Nombre: ej06-calcula_tiempos.sh
 # Autor: Rashi Chugani <chugani205@gmail.com>
 #
@@ -10,8 +9,7 @@
 # Entrada: 1: segundos
 # Salida: mensaje
 #
-# Historial:
-#   2024-01-11: versión 1
+# Versión: 2024-01-11: versión 1
 ############################################
 
 tiempo_en_segundos=$1
