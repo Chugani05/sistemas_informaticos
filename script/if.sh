@@ -1,5 +1,15 @@
 #!/bin/bash
 
+############################################
+# Nombre: if.sh
+# Autor: Rashi Chugani <chugani205@gmail.com>
+#
+# Objetivo:
+#
+# Historial:
+#   2024-01-16: versión 1.0
+############################################
+
 # Caso 1: elemento vacio
 elem=$1
 #if [ "elem" = ""]

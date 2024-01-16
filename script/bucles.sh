@@ -6,7 +6,9 @@
 #
 # Objetivo: ejemplos simple de bucles en scripts
 #
-# Versión: 2024-01-15: versión 1.0
+# Historial: 
+#   2024-01-15: versión 1.0
+#   2024-01-16: versión 2.0
 ############################################
 
 # Bucle más simple de indicando los valores
@@ -45,9 +47,25 @@ do
     echo "El cuadrado de $i es $((i**2))"
 done
 
-# Bucle hasta un valor almacenado en una variable
+# Bucle hasta un valor almacenado en una variable (creciente)
 read "Indique el valor máximo: " n
-for i in `seq 0 $n`
+#             init  end
+for i in `seq  0    $n`
 do
     echo "El cuadrado de $i es $((i**2))"
 done
+
+# Bucle hasta un valor almacenado en una variable (decreciente)
+read "Indique el valor máximo: " n
+#             init  step  end
+for i in $(seq $n    -2    4)
+do
+    echo "El cuadrado de $i es $((i**2))"
+done
+
+# Sintaxis C-like
+for ((i=0; i<=$n; i++))
+do
+    echo "Los valores de i son $i"
+done
+
