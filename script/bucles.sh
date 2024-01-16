@@ -54,6 +54,7 @@ for i in `seq  0    $n`
 do
     echo "El cuadrado de $i es $((i**2))"
 done
+<<<<<<< HEAD
 
 # Bucle hasta un valor almacenado en una variable (decreciente)
 read "Indique el valor máximo: " n
@@ -68,4 +69,3 @@ for ((i=0; i<=$n; i++))
 do
     echo "Los valores de i son $i"
 done
-
