@@ -28,3 +28,19 @@ do
     #i=$((i+1))
     ((i++))
 done
+
+
+# Ejemplo de uso del break y continue (EVITARLO SIEMPRE QUE SEA POSIBLE!!)
+while true
+do
+    read -p "Dime un valor mayor entre 10 y 20" val
+    if [ "$val" -ge 10 ] && [ "$val" -le 20 ]
+    then
+            echo "Correcto"
+            break
+    else
+            echo "Noooo!!!"
+            continue
+    fi
+    echo "Este mensaje Nunca se imprimira"
+done
