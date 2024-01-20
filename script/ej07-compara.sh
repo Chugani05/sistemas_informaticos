@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#########################################
+#################################################
 #
 # Nombre: ej07-compara.sh
 # Autor: Rashi Chugani <chugani205@gmail.com>
@@ -10,8 +10,8 @@
 # Entrada: 2 argumentos (números a comparar)
 # Salidas: indica qué número es mayor, o si son iguales
 #
-# HISTORIAL:
-#   2023-12-09: versión 1
+# Historial:
+#   2024-01-20: versión 1
 #
 #################################################
 
@@ -31,7 +31,6 @@ then
 fi
 
 # Compruebo qué número es mayor
-
 if [ "$a" -gt "$b" ]
 then
 	echo "$a es mayor que $b"
