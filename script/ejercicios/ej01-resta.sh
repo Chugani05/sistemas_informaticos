@@ -12,7 +12,7 @@
 #
 # Historial: 
 #   2024-01-08: versión 1.0
-#   2024-01-20: versión 2.0
+#   2024-01-21: versión 2.0
 #
 ############################################
 
@@ -20,20 +20,9 @@
 numero1=$1
 numero2=$2
 
-
-if [ $# -eq 0 ]
-then
-	echo "ERROR: No has indicado argumentos. Debes indicar 2 argumentos"
-	echo "SINTAXIS: $0 <primer_numero> <segundo_numero>"
-	exit 
-
-elif [ $# -eq 1 ]
-then
-	echo "Perfecto!! Has indicado 2 argumentos"
-else
-	echo "Has indicado $# argumentos, sólo usaremos los dos primeros y se ignorará el resto"
-fi
-
+# Pide los comandos por teclado si no son introducidos
+read -p "Indique el primer número: " numero1
+read -p "Indique el segundo número: " numero2
 
 # Realizar la resta
 resultado=$((numero1 - numero2))

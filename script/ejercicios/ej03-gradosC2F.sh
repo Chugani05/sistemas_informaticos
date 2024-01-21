@@ -18,36 +18,49 @@
 
 # Argumentos
 Celsius=$1
-ndec=$2
 
-# Mis variables y constantes
-ndecDEF=3
+# Pide los comandos por teclado si no son introducidos
+read -p "Indique los grados Celsius: " Celsius
 
-#echo "Has indicado $# argumentos"
-#echo "Los argumentos que has indicado son: $*"
-#echo "Los argumentos que has indicado son: $@"
-#echo "Estoy en la línea $LINENO, llevo ejecutando $SECONDS y fui ejecutado por $USER"
-
-
-if [ $# -eq 0 ]
-then
-	echo "ERROR: No has indicado argumentos. Debes indicar 2 argumentos"
-	echo "SINTAXIS: $0 <grados Fahrenheit> <num decimales>"
-	exit 
-
-elif [ $# -eq 1 ]
-then
-	echo "Sólo has indicado 1 argumento (ºF)."
-	echo "Usaremos $ndecDEF decimales por defecto"
-	ndec=$ndecDEF
-
-elif [ $# -eq 2 ]
-then
-	echo "Perfecto!! Has indicado 2 argumentos"
-else
-	echo "Has indicado $# argumentos, sólo usaremos los dos primeros y se ignorará el resto"
-fi
-
-
-Fahrenheit=$(echo "scale=$ndec; $Celsius * 9/5 + 32" | bc )
+# Calculos y mensaje
+Fahrenheit=$(echo "$Celsius * 9/5 + 32" | bc )
 echo "${Celsius}ºC son ${Fahrenheit}ºF"
+
+
+
+## Argumentos
+#Celsius=$1
+#ndec=$2
+#
+## PIDE LOS COMANDOS POR TECLADO SI NO SON INTRODUCIDOS
+## Mis variables y constantes
+#ndecDEF=3
+#
+##echo "Has indicado $# argumentos"
+##echo "Los argumentos que has indicado son: $*"
+##echo "Los argumentos que has indicado son: $@"
+##echo "Estoy en la línea $LINENO, llevo ejecutando $SECONDS y fui ejecutado por $USER"
+#
+#
+#if [ $# -eq 0 ]
+#then
+#	echo "ERROR: No has indicado argumentos. Debes indicar 2 argumentos"
+#	echo "SINTAXIS: $0 <grados Fahrenheit> <num decimales>"
+#	exit 
+#
+#elif [ $# -eq 1 ]
+#then
+#	echo "Sólo has indicado 1 argumento (ºF)."
+#	echo "Usaremos $ndecDEF decimales por defecto"
+#	ndec=$ndecDEF
+#
+#elif [ $# -eq 2 ]
+#then
+#	echo "Perfecto!! Has indicado 2 argumentos"
+#else
+#	echo "Has indicado $# argumentos, sólo usaremos los dos primeros y se ignorará el resto"
+#fi
+#
+#
+#Fahrenheit=$(echo "scale=$ndec; $Celsius * 9/5 + 32" | bc )
+#echo "${Celsius}ºC son ${Fahrenheit}ºF"

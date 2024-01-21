@@ -22,20 +22,11 @@ horas=$2
 minutos=$3
 segundos=$4
 
-
-if [ $# -eq 0 ]
-then
-	echo "ERROR: No has indicado argumentos. Debes indicar 4 argumentos"
-	echo "SINTAXIS: $0 <dias> <horas> <minutos> <segundos>"
-	exit 
-
-elif [ $# -eq 1 ]
-then
-	echo "Perfecto!! Has indicado 4 argumentos"
-else
-	echo "Has indicado $# argumentos, sólo usaremos los dos primeros y se ignorará el resto"
-fi
-
+# Pide los comandos por teclado si no son introducidos
+read -p "Indique los días: " dias
+read -p "Indique las horas: " horas
+read -p "Indique los minutos: " minutos
+read -p "Indique los segundos: " segundos
 
 # Calculo del tiempo
 tiempo_en_segundos=$((($dias * 86400) + ($horas * 3600) + ($minutos * 60) + $segundos))
