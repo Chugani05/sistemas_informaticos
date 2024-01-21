@@ -20,4 +20,4 @@ do
 done
 
 num_val=$#
-echo "Lasuma de todos los valores dados es $sum. La media es $((sum/num_val))
+echo "La suma de todos los valores dados es $sum. La media es $((sum/num_val))

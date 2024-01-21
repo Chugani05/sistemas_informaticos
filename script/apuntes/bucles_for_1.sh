@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ############################################
+#
 # Nombre: bucles_for_1.sh
 # Autor: Rashi Chugani <chugani205@gmail.com>
 #
@@ -9,6 +10,7 @@
 # Historial: 
 #   2024-01-15: versión 1.0
 #   2024-01-16: versión 2.0
+#
 ############################################
 
 # Bucle más simple de indicando los valores
