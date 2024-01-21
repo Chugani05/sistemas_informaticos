@@ -1,12 +1,15 @@
 #!/bin/bash
 
 ############################################
+#
 # Nombre: funciones.sh
 # Autor: Rashi Chugani <chugani205@gmail.com>
 #
 # Objetivo: ejemplos simple de funciones en scripts
 #
-# Versión: 2024-01-19: versión 1.0
+# Historial:
+#   2024-01-19: versión 1.0
+#
 ############################################
 
 #LISTA DE ERRORES

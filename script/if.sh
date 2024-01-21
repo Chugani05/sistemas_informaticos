@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ############################################
+#
 # Nombre: if.sh
 # Autor: Rashi Chugani <chugani205@gmail.com>
 #
@@ -8,6 +9,7 @@
 #
 # Historial:
 #   2024-01-16: versión 1.0
+#
 ############################################
 
 # Caso 1: elemento vacio

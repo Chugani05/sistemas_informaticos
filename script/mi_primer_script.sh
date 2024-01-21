@@ -1,15 +1,18 @@
 #!/bin/bash
 
 ############################################
-# Nombre: script.sh
+#
+# Nombre: mi_primer_script.sh
 # Autor: Rashi Chugani <chugani205@gmail.com>
 #
 # Objetivo: hacer pequeñas pruebas con scripts
 #
-# Entrada: ninguna
+# Entrada: nombre, apellido, curso, a, b
 # Salida: mensaje
 #
-# Versión: 2023-12-18: versión 1
+# Historia:
+#   2023-12-18: versión 1.0
+#
 ############################################
 
 nombre="Rashi"

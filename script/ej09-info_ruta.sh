@@ -11,7 +11,7 @@
 # Salidas: información sobre el elemento
 #
 # Historial:
-#   2024-01-20: versión 1
+#   2024-01-20: versión 1.0
 #
 #################################################
 

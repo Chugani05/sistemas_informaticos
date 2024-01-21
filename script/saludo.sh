@@ -1,7 +1,8 @@
 #!/bin/bash
 
 ############################################
-# Nombre: script.sh
+#
+# Nombre: saludo.sh
 # Autor: Rashi Chugani <chugani205@gmail.com>
 #
 # Objetivo: mostrar un saludo en pantalla
@@ -9,7 +10,9 @@
 # Entrada: nombre, apellido y curso
 # Salida: saludo
 #
-# Versión: 2023-12-18: versión 1
+# Historial:
+#   2023-12-18: versión 1.0
+#
 ############################################
 
 nombre="Rashi"
