@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ############################################
+#
 # Nombre: ej02-crea_usuario.sh
 # Autor: Rashi Chugani <chugani205@gmail.com>
 #
@@ -9,7 +10,9 @@
 # Entrada: 1: nombre, 2: apellido, 3: usuario
 # Salida: mensaje
 #
-# Versión: 2024-01-08: versión 1
+# Historial: 
+#   2024-01-08: versión 1.0
+#
 ############################################
 nombre=$1
 apellido=$2

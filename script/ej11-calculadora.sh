@@ -11,7 +11,7 @@
 # Salidas: operación elegida
 #
 # Historial:
-#   2024-01-20: versión 1
+#   2024-01-20: versión 1.0
 #
 #################################################
 
@@ -27,10 +27,10 @@ fi
 
 
 PS3="Elija una de las opciones: "
-select opcion in "Sumar sumando" "Restar" "Multiplicar" "Dividir" "Salir"
+select opcion in "Sumar" "Restar" "Multiplicar" "Dividir" "Salir"
 do
 	case $opcion in
-		"Sumar sumando") echo "El resultado de $a + $b = $(( a+b ))" ;;
+		"Sumar") echo "El resultado de $a + $b = $(( a+b ))" ;;
 		"Restar") echo "El resultado de $a - $b = $(( a-b ))" ;;
 		"Multiplicar") echo "El resultado de $a * $b = $(( a*b ))" ;;
 		"Dividir") echo "El resultado de $a / $b = $(( a/b ))" ;;

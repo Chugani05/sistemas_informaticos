@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ############################################
+#
 # Nombre: ej04-día_semana.sh
 # Autor: Rashi Chugani <chugani205@gmail.com>
 #
@@ -9,7 +10,9 @@
 # Entrada: 1: día, 2: mes, 3: año
 # Salida: mensaje
 #
-# Versión: 2024-01-08: versión 1
+# Historial: 
+#   2024-01-08: versión 1.0
+#
 ############################################
 
 dia=$1

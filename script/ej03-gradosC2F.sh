@@ -1,40 +1,23 @@
 #!/bin/bash
 
 ############################################
+#
 # Nombre: ej03-gradosC2F.sh
 # Autor: Rashi Chugani <chugani205@gmail.com>
 #
 # Objetivo: convertir grados Celsius a Fahrenheit
 #
-# Entrada: 1: celsius
+# Entrada: 1: celsius, 2: num decimales (opcional)
 # Salida: mensaje
 #
 # Historial: 
 #   2024-01-08: versión 1.0
 #   2024-01-11: versión 2.0
+#
 ############################################
 
-
-Celsius=$1
-
-Fahrenheit=$((Celsius * 9/5 + 32))
-
-echo "$Celsius grados Celsius corresponden a $Fahrenheit grados Fahrenheit"
-
-
-
-if [ $# -eq 0 ]; then
-    read -p "Introduce la cantidad de grados Celsius: " $Celsius
-else
-    Celsius=$1
-
-Fahrenheit=$((Celsius * 9/5 + 32))
-
-echo "$Celsius grados Celsius corresponden a $Fahrenheit grados Fahrenheit"
-
-
 # Argumentos
-gradosC=$1
+Celsius=$1
 ndec=$2
 
 # Mis variables y constantes
@@ -54,20 +37,17 @@ then
 
 elif [ $# -eq 1 ]
 then
-		echo "Sólo has indicado 1 argumento (ºF)."
-		echo "Usaremos $ndecDEF decimales por defecto"
-		ndec=$ndecDEF
+	echo "Sólo has indicado 1 argumento (ºF)."
+	echo "Usaremos $ndecDEF decimales por defecto"
+	ndec=$ndecDEF
 
 elif [ $# -eq 2 ]
 then
-		echo "Perfecto!! Has indicado 2 argumentos"
+	echo "Perfecto!! Has indicado 2 argumentos"
 else
 	echo "Has indicado $# argumentos, sólo usaremos los dos primeros y se ignorará el resto"
 fi
 
-read -p "Introduzca un valor: " valor
-echo "El dato leído es $valor"
 
-
-gradosF=$(echo "scale=$ndec; $gradosC * 9 / 5 + 32" | bc )
-echo "${gradosC}ºC son ${gradosF}ºF"
+Fahrenheit=$(echo "scale=$ndec; $Celsius * 9/5 + 32" | bc )
+echo "${Celsius}ºC son ${Fahrenheit}ºF"
