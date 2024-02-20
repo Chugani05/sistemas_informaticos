@@ -3,11 +3,11 @@
 title ej02-crea_usuario
 
 rem ****************************************
+rem *
 rem * Nombre: suma.bat
 rem * Autor: Rashi Chugani Narwani
 rem *
 rem * Objetivo: 
-rem *
 rem *
 rem ****************************************
 
