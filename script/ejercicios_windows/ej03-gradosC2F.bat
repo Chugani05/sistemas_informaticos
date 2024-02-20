@@ -14,6 +14,7 @@ rem * Salidas: Valor en Fahrenheit
 rem *
 rem * versión: 2024-01-22 versión 1.0
 rem *
+rem *
 rem ****************************************
 
 set celsius=%1
