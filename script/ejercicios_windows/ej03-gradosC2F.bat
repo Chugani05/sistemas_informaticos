@@ -1,10 +1,10 @@
 @echo off
 
-title ej02-crea_usuario
+title ej03-gradosC2F
 
 rem ****************************************
 rem *
-rem * Nombre: c2f.bat
+rem * Nombre: ej03-gradosC2F.bat
 rem * Autor: Rashi Chugani Narwani
 rem *
 rem * Objetivo: Convertir grados Celsius a Fahrenheit
