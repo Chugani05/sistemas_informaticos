@@ -1,5 +1,20 @@
 @echo off
-setlocal
+
+title ej06-calcula_tiempos
+
+rem ****************************************
+rem *
+rem * Nombre: ej06-calcula_tiempos.bat
+rem * Autor: Rashi Chugani Narwani
+rem *
+rem * Objetivo: Convertir grados Celsius a Fahrenheit
+rem *
+rem * Entradas: Valor en Celsius
+rem * Salidas: Valor en Fahrenheit
+rem *
+rem * versión: 2024-01-22 versión 1.0
+rem *
+rem ****************************************
 
 REM Verificar si se proporcionó el número correcto de argumentos
 if "%~1"=="" (
