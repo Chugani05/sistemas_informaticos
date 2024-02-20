@@ -38,5 +38,3 @@ set /a minutos=(segundos % 3600) / 60
 set /a segundos=segundos %% 60
 
 echo %dias% día(s), %horas% hora(s), %minutos% minuto(s) y %segundos% segundo(s)
-
-endlocal
