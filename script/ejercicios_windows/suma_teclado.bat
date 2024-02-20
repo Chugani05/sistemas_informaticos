@@ -3,6 +3,7 @@
 title Suma_teclado
 
 rem ****************************************
+rem *
 rem * Nombre: suma.bat
 rem * Autor: Rashi Chugani Narwani
 rem *
