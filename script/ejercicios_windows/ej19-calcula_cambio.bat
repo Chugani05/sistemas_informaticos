@@ -29,10 +29,11 @@ REM Solicitar el dinero entregado por el cliente
 set /p dinero_entregado="Indique el dinero pagado: "
 
 REM Calcular el cambio
+set "cambio="
 set /a cambio=dinero_entregado - precio_articulo
 
-echo Se ha comprado un artículo de %precio_articulo% euros y ha pagado %dinero_entregado% euros.
-echo El cambio son %cambio% euro(s), debe entregar:
+echo Se ha comprado un articulo de %precio_articulo% euros y ha pagado %dinero_entregado% euros.
+echo El cambio son %cambio% euros, debe entregar:
 
 REM Definir un array de billetes y su valor
 set "billetes=500 200 100 50 20 10 5 2 1"
@@ -45,4 +46,3 @@ for %%b in (%billetes%) do (
         set /a cambio=cambio - (cantidad * %%b)
     )
 )
-
