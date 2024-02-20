@@ -3,11 +3,11 @@
 title Suma_arg
 
 rem ****************************************
+rem *
 rem * Nombre: suma.bat
 rem * Autor: Rashi Chugani Narwani
 rem *
 rem * Objetivo: Sumar dos valores por argumentos
-rem *
 rem *
 rem ****************************************
 
