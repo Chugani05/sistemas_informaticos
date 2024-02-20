@@ -16,11 +16,11 @@ rem * Versión: 2024-02-20 versión 1.0
 rem *
 rem ****************************************
 
-REM Establecer los valores por defecto de base y altura
+rem Establecer los valores por defecto de base y altura
 set "base=7"
 set "altura=4"
 
-REM Verificar la cantidad de argumentos proporcionados por el usuario
+rem Verificar la cantidad de argumentos proporcionados por el usuario
 if "%2" neq "" (
     set "base=%1"
     set "altura=%2"
@@ -28,13 +28,13 @@ if "%2" neq "" (
     set "base=%1"
 )
 
-REM Calcular el área
+rem Calcular el área
 set /a area=base * altura
 
-REM Mostrar información sobre el rectángulo
+rem Mostrar información sobre el rectángulo
 echo Vamos a pintar un rectangulo de base: %base%, altura: %altura% y area: %area%
 
-REM Pintar el rectángulo
+rem Pintar el rectángulo
 for /l %%i in (1,1,%altura%) do (
     for /l %%j in (1,1,%base%) do (
         echo | set /p="# "
