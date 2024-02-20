@@ -17,14 +17,14 @@ rem *
 rem ****************************************
 
 REM Verificar si se proporcionaron dos parámetros
-if "%~2"=="" (
+if "%2"=="" (
     echo Por favor, proporciona la altura (en cm) y el peso (en Kg) como parámetros.
     exit /b 1
 )
 
 REM Utilizar PowerShell para manejar valores decimales
-set "altura=%~1"
-set "peso=%~2"
+set "altura=%1"
+set "peso=%2"
 
 REM Calcular el IMC
 for /f "delims=" %%i in ('powershell -command "[math]::Round(%peso% / (($altura$/100) * ($altura$/100)))"') do set "imc=%%i"
