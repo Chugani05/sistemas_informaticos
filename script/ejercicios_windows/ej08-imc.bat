@@ -12,7 +12,7 @@ rem *
 rem * Entradas: Altura (en cm) y peso (en Kg)
 rem * Salidas: IMC y clasificación correspondiente
 rem *
-rem * Versión: 2024-02-20 versión 1.0
+rem * Versión: 2024-02-13 versión 1.0
 rem *
 rem ****************************************
 
