@@ -3,6 +3,7 @@
 title ej02-crea_usuario
 
 rem ****************************************
+rem *
 rem * Nombre: c2f.bat
 rem * Autor: Rashi Chugani Narwani
 rem *
@@ -12,6 +13,7 @@ rem * Entradas: Valor en Celsius
 rem * Salidas: Valor en Fahrenheit
 rem *
 rem * versión: 2024-01-22 versión 1.0
+rem *
 rem ****************************************
 
 set celsius=%1
