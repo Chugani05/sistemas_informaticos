@@ -1,5 +1,20 @@
 @echo off
-setlocal
+
+title ej15-rectangulo
+
+rem ****************************************
+rem *
+rem * Nombre: ej15-rectangulo.bat
+rem * Autor: Rashi Chugani Narwani
+rem *
+rem * Objetivo: Calcular el área y dibujar un rectángulo en la consola.
+rem *
+rem * Entradas: Base y altura del rectángulo (opcional)
+rem * Salidas: Información sobre el rectángulo y representación visual en la consola.
+rem *
+rem * Versión: 2024-02-20 versión 1.0
+rem *
+rem ****************************************
 
 REM Establecer los valores por defecto de base y altura
 set "base=7"
@@ -27,4 +42,3 @@ for /l %%i in (1,1,%altura%) do (
     echo.
 )
 
-endlocal

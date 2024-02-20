@@ -7,12 +7,12 @@ rem *
 rem * Nombre: ej06-calcula_tiempos.bat
 rem * Autor: Rashi Chugani Narwani
 rem *
-rem * Objetivo: Convertir grados Celsius a Fahrenheit
+rem * Objetivo: Convertir segundos a días, horas, minutos y segundos.
 rem *
-rem * Entradas: Valor en Celsius
-rem * Salidas: Valor en Fahrenheit
+rem * Entradas: Número de segundos
+rem * Salidas: Días, horas, minutos y segundos correspondientes
 rem *
-rem * versión: 2024-01-22 versión 1.0
+rem * Versión: 2024-02-20 versión 1.0
 rem *
 rem ****************************************
 

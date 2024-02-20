@@ -1,5 +1,20 @@
 @echo off
-setlocal
+
+title ej08-imc
+
+rem ****************************************
+rem *
+rem * Nombre: ej08-imc.bat
+rem * Autor: Rashi Chugani Narwani
+rem *
+rem * Objetivo: Calcular el Índice de Masa Corporal (IMC) basado en la altura y el peso proporcionados como parámetros.
+rem *
+rem * Entradas: Altura (en cm) y peso (en Kg)
+rem * Salidas: IMC y clasificación correspondiente
+rem *
+rem * Versión: 2024-02-20 versión 1.0
+rem *
+rem ****************************************
 
 REM Verificar si se proporcionaron dos parámetros
 if "%~2"=="" (
@@ -32,5 +47,3 @@ if %imc% lss 16 (
 ) else (
     echo IMC: %imc% - Obesidad tipo III
 )
-
-endlocal

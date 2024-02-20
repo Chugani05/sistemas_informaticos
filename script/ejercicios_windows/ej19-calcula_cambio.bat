@@ -1,5 +1,20 @@
 @echo off
-setlocal enabledelayedexpansion
+
+title ej19-calcula_cambio
+
+rem ****************************************
+rem *
+rem * Nombre: ej19-calcula_cambio.bat
+rem * Autor: Rashi Chugani Narwani
+rem *
+rem * Objetivo: Calcular el cambio a entregar al cliente después de una compra.
+rem *
+rem * Entradas: Precio del artículo y dinero entregado por el cliente.
+rem * Salidas: Cantidad a entregar al cliente como cambio.
+rem *
+rem * Versión: 2024-02-20 versión 1.0
+rem *
+rem ****************************************
 
 REM Verificar si se proporcionó el precio del artículo como argumento
 if "%~1"=="" (
@@ -31,4 +46,3 @@ for %%b in (%billetes%) do (
     )
 )
 
-endlocal
