@@ -61,14 +61,14 @@ TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no 
 
 12. Abre una nueva terminal, vamos a ejecutar una aplicación que sabemos que suele solicitar muchos recursos y hacer que nuestro equipo vaya más lento, así que vamos a lanzarla con una prioridad un poco peor a la normal. Imaginemos que esta aplicación es xeyes, ejecútala de forma que su prioridad sea 5 puntos peor que la normal. `nice -5 xeyes`
 
-13. Aunque la aplicación que lanzaste en el apartado anterior fue enviada con menos prioridad, la máquina ha empezado a ir cada vez más lenta. Haz que esta aplicación que sigue en ejecución, empeore su prioridad en otros 5 puntos. `renice -5 xeyes —no del todo bien`
+13. Aunque la aplicación que lanzaste en el apartado anterior fue enviada con menos prioridad, la máquina ha empezado a ir cada vez más lenta. Haz que esta aplicación que sigue en ejecución, empeore su prioridad en otros 5 puntos. `renice -10 xeyes`
 
 14. Parece que el equipo ya va mejor, indica el **comando que usarías para dejar la aplicación anterior con su prioridad inicial**. `No se puede`
 
 15. Para finalizar, **muestra la carga del sistema** (utiliza cualquier de los comandos que hemos indicado en clase). `uptime`
 
 ### Windows
-16. Lista todos los procesos en MS Windows que consuman más de 1MiB de memoria. `—en blanco`
+16. Lista todos los procesos en MS Windows que consuman más de 1MiB de memoria. `tasklist /fi "MEMUSAGE gt 1234`
 
 17. Lanza un bloc de notas (notepad.exe) con la prioridad más baja posible. `start "" /low notepad.exe`
 
@@ -76,7 +76,7 @@ TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no 
 
 19. Vuelve a dejar al Bloc de Notas en su prioridad normal. `wmic process where processid="1234" CALL setpriority "Normal"`
 
-20. Finaliza el Bloc de Notas de forma inmediata. `taskkill /PID 1234 --no del todo bien`
+20. Finaliza el Bloc de Notas de forma inmediata. `taskkill /f /PID 1234`
 
 
 ## SERVICIOS
