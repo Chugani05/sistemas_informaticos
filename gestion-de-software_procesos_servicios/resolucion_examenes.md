@@ -111,15 +111,26 @@ Ahora que su equipo queda libre, desde Dirección nos han pedido preparar este e
 ## MS Windows
 1. Tras unos días, el usuario te envía un mensaje diciendo que para su trabajo necesita instalar una aplicación y que no sabe cómo hacerlo. Vas a su despacho a echarle una mano, y en el camino recuerdas lo fastidioso que es instalar una aplicación en MS Windows, ya que tienes que buscar de dónde te la podrías descargar, asegurarte que es una fuente segura (o lo más segura posible, preferentemente que sea el propio desarrollador y que tenga una buena reputación), luego descargarlo, instalarlo...
 Pero en ese momento te acuerdas que, desde hace poco tiempo, MS Windows dispone de un sistema propio de gestión de software, así que decides usarlo. El software que necesita instalar el usuario es WinDirStat, es una pequeña aplicación para ver el uso de disco por directorios. Consulta a ver si esta aplicación está disponible en el gestor de software de Windows. `winget search WinDirStat`
+
 2. Pues al buscar WinDirStat sí que obtienes un resultado. Se lo comentas al usuario y te pide que le muestres más información sobre este paquete. `winget show "WinDirStat"`
+
 3. El usuario no está muy convencido de si esa versión de WinDirStat le servirá o no, pero te pide que se la instales para probar. `winget install "WinDirStat"`
+
 4. El usuario sigue encontrando bastantes problemas. Hoy te ha venido con algo extraño, te dice que ha estado usando la calculadora y le está consumiendo muchos recursos. Inicia una calculadora desde línea de comandos (para ello debes usar **calc.exe**), pero de forma que se le asigne un POCO MENOS de recursos que los que se asignan normalmente. `start "" /BelowNormal calc.exe`
+
 5. Parece que ha ido algo mal, y la calculadora no tiene suficientes recursos y va bastante lenta. Vamos a investigar un poco más, lista en su equipo todos los procesos que empiezan por calc `tasklist /fi "IMAGENAME eq calc*"`
+
 6. Con el comando anterior habrás averiguado cuál es el NOMBRE EXACTO del proceso (que NO tiene por qué coincidir con el del ejecutable). Como estos procesos están dando problemas, le comentas al usuario que vas a FINALIZAR de forma INMEDIATA todos los procesos que tengan ese NOMBRE EXACTO. `taskkill /IM calc.exe` --El comando es correcto, pero tienes errores en las opciones
+
 7. Ahora resulta que al usuario le está dando problemas algo llamado **spooler** y que alguien le ha comentado que es "algo relacionado con el sistema de impresión y que es un programa residente o algo así que es especial, que siempre se está ejecutando". Muestra los detalles de **spooler**. `sc query spooler`
+
 8. El usuario no sabe ni para qué se usa **spooler**, y tú investigas y no parece que sea crítico, así que decides detenerlo. `sc stop spooler`
+
 9. Por si acaso, también vas a configurar **spooler** para que no se inicie automáticamente, sino que sólo se arranque cuando haga falta. ``
+
 10. Tras solucionarle todos los problemas anteriores, el usuario que ha estado usando la aplicación WinDirStat, aparentemente sin problemas por un tiempo, viene a decirte de repente que la versión que le instalaste era bastante antigua, que cómo es eso posible...
 En ese momento te das cuenta de que se te ha olvidado hacer algo y quizá el sistema de gestión de software no contaba con las últimas versiones de todas las aplicaciones. ¿Qué debes hacer para asegurarte de que el sistema use las últimas versiones disponibles en este momento? `winget source update`
+
 11. Una vez que te has asegurado de que el gestor de software está usando las versiones más recientes, intenta actualizar WinDirStat (sólo ese paquete), por si hubiera alguna nueva versión. `winget upgrade "WinDirStat"`
+
 12. A pesar de tus esfuerzos, el usuario dice que la versión de WinDirStat que está usando no le sirve, y que, de todas formas, ya no le hace falta porque lo van a cambiar a otra sucursal, así que te pide que se la desinstales, y te de las gracias por toda la ayuda prestada. `winget uninstall "WinDirStat"`
