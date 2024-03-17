@@ -1,4 +1,68 @@
 # PROGRAMACIÓN DE TAREAS
+1. ¿Cuál NO es la característica que de cumplir, en general, los servicios?
+
+a) Ejecutarse en segundo plano <br> b) Realizar tareas esenciales o importan <br> c) para el sistema (o aplicaciones) <br> d) Tener una interfaz usable y accesible comunicación con usuarios <br> e) Estar preparados para ejecución cor responder en cualquier momento
+
+2. ¿De dónde suelen leer la configuración y dónde suelen mostrar las salidas y errores los servicios en GNU/Linux?
+
+a) Como todo proceso, la entrada se hace desde teclado y las salidas y errores por pantalla <br> b) La configuración suele estar en /etc y las salidas y errores en /var/log <br> c) Los servicios no leen entradas ni muestran salidas ni errores <br> d) La configuración, entradas, salidas y errores la gestiona el cliente en modo gráfico
+
+3. En general, y sobre todo en los serv ¿qué se recomienda sobre los servicios?
+
+a) No activar ninguno nunca, para evita problemas de compatibilidad <br> b) Activar los estrictamente necesarios, seguridad y eficiencia de recursos <br> c) Siempre deben estar activos entre un un 80% de los servicios <br> d) Activarlos todos, para que el equipo más funcionalidades
+
+4. En GNU/Linux, ¿quién gestiona los servicios y procesos?
+
+a) La BIOS o la UEFI <br> b) El administrador de disco <br> c) El sistema de iniacialización (init) <br> d) El módulo de auditoría del Kernel
+
+5. En la actualidad, ¿cuál es el sistema de inicialización más usado en las distribuciones más relevantes de GNU/Linux?
+
+a) Systemd <br> b) System III <br> c) System V <br> d) UpStart
+
+6. ¿Cuál es el principal comando que usa systemd para gestionar los servicios?
+
+Response: `Systemctl`
+
+7. Con systemd, ¿cómo veo la información básica del servicio (si está activo o no, si está habilitado o no, cuándo se inició, PID, consumo de memoria y CPU, etc.)
+
+a) systemctl config <br> b) systemctl show <br> c) systemctl status <br> d) systemctl is-active <br> e) systemctl is-enabled
+
+8. Usando systemd hay un servicio que siempre que arranco está inactivo y lo tengo que activar manualmente, ¿por qué?
+
+a) El servicio no está instalado (uninstalled) <br> b) El servicio está deshabilitado (disabled) <br> c) El servicio está enmascarado (masked) <br> d) El servicio está aislado (isolated)
+
+9. ¿Cuál de estas afirmaciones es VERDADERA?
+
+a) Un servicio enmascarado NO puede estar activo <br> b) Un servicio deshabilitado NO puede estar activo <br> c) Un servicio habilitado NO puede estar inactivo <br> d) Un servicio enmascarado NO se puede activar
+
+10. Usando systemd quiero que un servicio no se pueda volver a iniciarse ni manual ni automáticamente, ¿qué tengo que hacer?
+
+a) systemctl stop <br> b) systemctl disable <br> c) systemctl isolate <br> d) systemctl mask
+
+11. ¿Qué es FALSO sobre modificar la configuración de un servicio?
+
+a) Al cambiar fichero de config. en /srv los cambios se aplican inmediatamente <br> b) La gran mayoría de servicios sólo comprueban y cargan la config. al iniciar <br> c) Generalmente hay que reiniciar o recargar el servicio para aplicar cambios <br> d) Si el servicio tiene la opción de reload, debemos usarla prioritariamente
+
+12. Con systemd quiero aplicar una nueva configuración a un servicio y asegurarme que QUEDE ACTIVO, ¿qué se recomienda?
+
+a) systemctl reload <br> b) systemctl restart <br> c) systemctl try-restart <br> d) systemctl reload-or-restart <br> e) systemctl try-reload-or-restart
+
+13. ¿Qué runlevel es VERDADERO?
+
+a) Runlevel 0: Apagado del equipo <br> b) Runlevel 1: Modo normal (multiusuario con red y entorno gráfico) <br> c) Runlevel 5: Reinicio del equipo <br> d) Runlevel 6: Monousuario sin red ni entorno gráfico (rescue)
+
+14. En Windows, ¿cuál es el estado de los servicios que se inician a demanda, pero no durante el arranque del sistema?
+
+a) Automático <br> b) Automático (inicio retardado) <br> c) Deshabilitado <br> d) Manual
+
+15. En MS Windows, ¿qué forma de mostrar todos los servicios y su información básica NO es correcta?
+
+a) En consola cmd, con el comando: service info <br> b) En consola cmd, con el comando: sc query <br> c) En PowerShell, con el cmdlet: Get-Service <br> d) Con la aplicación gráfica "Servicios" de MS
+
+16. ¿Cómo muestro la configuración de un servicio en la terminal cmd?
+
+a) sc config <br> b) Sc qc <br> c) sc show <br> d) sc sconfig
+
 
 # USUARIOS Y GRUPOS
 1. En GNU/Linux, ¿dónde se almacenan los datos de los usuarios?
