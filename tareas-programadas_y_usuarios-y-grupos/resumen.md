@@ -7,7 +7,7 @@
 - Por otro lado, el directorio en el que se ejecutan las tareas no suele ser el esperado y por eso se recomiendo el uso de rutas absolutas para especificar ficheros.
 - Usa redirecciones (> >> <<<) para almacenar la información y evitar su pérdida en la terminal virtual. Si hubiesen entradas de teclado, también se debe redirigir la entrada (stdin).
 
-### Tareas por tiempo: puntuales (Comando At)
+## Tareas por tiempo: puntuales (Comando At)
 - Se suele usar el comando `at` (normalmente no viene instalada por defecto en el sistema UNIX).
 - La hora se puede indicar tanto en el formato de 12 horas como el de 24. Las fechas, como recomendación, se indican en el formato japonés (YY-MM-DD)
 - También soporta el uso de 'lenguaje natural' como _tomorrow, tuesday, next week, now + 10 minutes_, y _noon, midnight, teatime..._
@@ -17,7 +17,7 @@
 - Para mostrar los detalles de una tarea por su id: `at -c id`.
 - Para borrar una tarea por su id: `atrm id` o `at -r id` o `at -d id`.
 
-### Tareas por tiempo: repetitivas (Comando Cron)
+## Tareas por tiempo: repetitivas (Comando Cron)
 - Hace referencia a Cronos.
 - No posee un cliente para especificar una tarea, sino que deben escribirse en una tabla (crontab) con formato especial.
 - Esta tabla es leida por el demonio _cron_ (_crond_ en algunos sistemas)
@@ -48,13 +48,13 @@ Otra operaciones utiles:
 - Borrar todas las tareas: `crontab -r`
 - Para borrar una tarea en específico, se debe ingresar a la tabla y borrar su línea o comentarla con #
 
-### Comando Watch
+## Comando Watch
 - Cron tiene una precisión de minutos, por lo que no es capaz de ejecutar tareas rápidamente en segundos, para eso usamos el comando Watch
 - Ejecuta un comando de forma periódica, mostrando la salida en pantalla completa.
 - Entre sus opciones se encuentra `-n X` (ejecuta el comando cada X segundos), `-d` (resalta diferencias en la salida), `-p` (aumenta la precisión en el cálculo de intervalos del tiempo), `-b` (emite un sonido si el comando arroja algún error).
 - Un ejemplo del comando watch, en el que se simula el funcionamiento de `top`: `watch -n 1 -d ps aux`
 
-### Tareas por eventos
+## Tareas por eventos
 - __Tareas cuando el sistema está "ocioso" (con baja carga, _idle_):__ el comando `batch`, encontrado en el paquete de `at`.
 - __Tareas relacionadas con el sistema de ficheros__: el paquete `incron` (ejecutar una tarea al crear o borrar ficheros...)
 - __Durante el arranque__: con el atajo @reboot en cron, si este lo soporta (Ex: `@reboot sleep 300 && ~/mi_script.sh`)
