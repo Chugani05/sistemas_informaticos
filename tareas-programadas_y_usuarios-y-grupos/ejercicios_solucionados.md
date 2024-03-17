@@ -155,82 +155,99 @@ En este archivo se encuentra toda la información de los usuarios. Cada línea e
 
 7. Crea el usuario "test01" de forma que su home sea /home/test01 (se deben copiar la configuración básica de /etc/skel) y su shell sea /bin/bash.
 ```bash
-
+sudo useradd -m -d /home/test01 -s /bin/bash test01
 ```
 
 8. Intenta abrir una sesión como "test01" una vez creado... ¿puedes? ¿Por qué? ¿Cómo lo arreglarías?
-```bash
 
+No se puede porque no se le ha asignado una contraseña. Para ello se usa el comando: 
+```bash
+sudo passwd test01
 ```
 
 9. El usuario "test01", ¿qué grupo principal tiene? Cámbialo para que sea su grupo principal sea "tests".
 ```bash
-
+sudo usermod -g tests test01
 ```
 
 10. Borra el grupo principal antiguo de test01, ¿puedes eliminarlo? ¿Por qué?
 ```bash
-
+sudo groupdel test01
 ```
+Sí se puede, porque se permite eliminar si el grupo no está siendo utilizado por ningún usuario como grupo principal o secundario.
 
 11. Borra el grupo "tests", ¿puedes eliminarlo? ¿Por qué?
-```bash
 
-```
+No, porque test01 está usando ese grupo.
 
 12. Asigna algunos grupos secundarios a "test01". Indica para qué sirve cada uno de los grupos creados
-```bash
 
+Para agregar a grupos secundarios se usa el comando usermod:
+```bash
+ sudo usermod -G grupo1,grupo2 test01
+```
+Estos grupos son creados con:
+```bash
+sudo groupadd group1
 ```
 
 13. Asigna algunos grupos más secundarios a "test01", SIN borrar los que ya tenía
 ```bash
-
+sudo usermod -aG nuevogrupo1 test01 
 ```
+Se usa la -a para no eliminar los que ya tenía.
 
 14. Elimina algunos grupos secundarios del usuario test01
 ```bash
-
+sudo gpasswd -d test01 grupoaeliminar
 ```
 
 15. Bloquea al usuario test01. Luego intenta abrir una sesión... ¿puedes? ¿Por qué?
 ```bash
-
+sudo passwd -l test01
 ```
+No, porque con este comando hace que se caduque la contraseña.
 
 16. Desbloquea al usuario test01. ¿Se ha perdido algo de su información?
 ```bash
-
+sudo passwd -u test01
 ```
+No debería haber perdido información
 
 17. Cambia la información de test01 indicando su nombre completo, oficina, teléfono, etc.
 ```bash
-
+sudo chfn test01
 ```
+Este comando te da opciones de escribir o modificar todos esos datos.
 
 18. Cambia la shell de test01 a una que no permita ejecutar comandos
 ```bash
-
+sudo chsh -s /bin/false test01
 ```
 
 19. Vuelve a dejarle a test01 su shell original
 ```bash
-
+sudo chsh -s /bin/bash test01
 ```
 
 20. Añade restricciones al usuario test01 de forma que tenga que cambiar la contraseña cada 15 días y que le avisen 3 días antes, dándole 2 días de margen para poder cambiar una contraseña caducada sin que se bloquee su cuenta. Además, la cuenta quedará deshabilitada el 30 de junio.
 ```bash
-
+sudo chage -M 15 -W 3 -I 2 -E 2023-06-30 test01
 ```
+**chage**: Es el comando utilizado para modificar la configuración de la contraseña de un usuario. <br>
+**-M 15**: Establece el máximo número de días antes de que la contraseña del usuario expire. En este caso, se establece en 15 días, lo que significa que el usuario "test01" tendrá que cambiar su contraseña cada 15 días. <br>
+**-W 3**: Establece el número de días de advertencia antes de que la contraseña expire. En este caso, se establece en 3 días, lo que significa que el usuario "test01" recibirá una advertencia 3 días antes de que su contraseña expire. <br>
+**-I 2**: Establece el número de días de inactividad antes de que la cuenta del usuario se desactive automáticamente. En este caso, se establece en 2 días, lo que significa que si el usuario "test01" no inicia sesión durante 2 días, su cuenta se desactivará automáticamente. <br>
+**-E 2023-06-30**: Establece la fecha de caducidad para la cuenta del usuario. En este caso, se establece en el 30 de junio de 2023, lo que significa que la cuenta del usuario "test01" se desactivará automáticamente en esa fecha.
 
 21. Elimina el usuario test01 con todo el contenido en su espacio personal. Ten en cuenta que test01 podría seguir conectado.
 ```bash
-
+sudo userdel -rf test01
 ```
 
 22. ¿Qué pasaría si test01 siguiera conectado en el momento que se elimina su cuenta? ¿Podría seguir usando el equipo con normalidad? ¿Cómo harías para cerrar inmediatamente todos sus procesos que estuvieran aún en ejecución?
 ```bash
-
+sudo pkill -u test01 -9
 ```
 
 
