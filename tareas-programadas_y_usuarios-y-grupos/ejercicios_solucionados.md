@@ -122,38 +122,33 @@ Resuelve los siguientes apartados en la máquina virtual de GNU/Linux. Cuando se
 
 1. Muestra todos los usuarios de tu máquina virtual. ¿Dónde está esa información? ¿Qué datos guarda el sistema sobre sus usuarios y cómo se organizan?
 ```bash
-cat /etc/passwd
+sudo getent passwd
 ```
 En este archivo se encuentra toda la información de los usuarios. Cada línea es un usuario, y en esta línea se encuentra la siguiente información: Cuenta (nombre de usuario) : Contraseña : UID (ID de usuario) : GID (ID de grupo) : GECOS (campo opcional con propósitos informativos) : Directorio (directorio principal o home del usuario) : shell (ruta al shell predeterminado, campo opcional)
 
 2. ¿Por qué hay tantos usuarios? De todos ellos, ¿cuáles realmente pueden abrir una consola de comandos? ¿cuáles podrían inciar una sesión con una contraseña válida? ¿Cómo sabes estos datos? ¿Por qué crees que es así?
-```bash
-
-```
+La mayoría de los usuarios que aparecen son de demonios/servicios, no se puede iniciar sesión con ellos ni si quiera poseen una shell por seguridad.
 
 3. Fíjate en el UID de los usuarios. ¿Ves alguna diferencia entre los usuarios con UID < 1000 y los que tiene un UID >= 1000? ¿Por qué es así?
-```bash
-
-```
+Los id inferiores a 1000 están reservados para usuarios del sistema, 1-500 usr sistema y del 500-999 usr apps.
 
 4. Muestra todos los grupos de tu máquina virtual. ¿Dónde está esa información? ¿Qué datos guarda el sistema sobre sus grupos y cómo se organizan?
 ```bash
-
+id (muestra los grupos y sus ids)
 ```
 
 5. ¿Por qué hay tantos grupos? Intenta buscar información sobre qué funciones tienen los diferentes grupos de tu sistema, en los apuntes hay un enlace con algo de información.
-```bash
-
-```
+Debido a que hay grupos creados de servicios o dispositivos, se utilizan para poder dar privilegios a un usuario al introducirlo en este
 
 6. ¿Cómo comprobarías si un usuario existe ya en el sistema? ¿Y un grupo?
 ```bash
-
+getent passwd {nombre del usuario}
+getent group {nombre del grupo}
 ```
 
 7. Crea el usuario "test01" de forma que su home sea /home/test01 (se deben copiar la configuración básica de /etc/skel) y su shell sea /bin/bash.
 ```bash
-sudo useradd -m -d /home/test01 -s /bin/bash test01
+sudo useradd -m -k /etc/skell -s /bin/bash test01
 ```
 
 8. Intenta abrir una sesión como "test01" una vez creado... ¿puedes? ¿Por qué? ¿Cómo lo arreglarías?
@@ -165,6 +160,10 @@ sudo passwd test01
 
 9. El usuario "test01", ¿qué grupo principal tiene? Cámbialo para que sea su grupo principal sea "tests".
 ```bash
+id -gn test01 ó groups test01
+```
+```bash
+sudo groupadd tests
 sudo usermod -g tests test01
 ```
 
@@ -182,33 +181,30 @@ No, porque test01 está usando ese grupo.
 
 Para agregar a grupos secundarios se usa el comando usermod:
 ```bash
- sudo usermod -G grupo1,grupo2 test01
+sudo usermod -aG sudo test01
 ```
-Estos grupos son creados con:
-```bash
-sudo groupadd group1
-```
+El grupo sudo sirve para hacer al usuario administrador
 
 13. Asigna algunos grupos más secundarios a "test01", SIN borrar los que ya tenía
 ```bash
-sudo usermod -aG nuevogrupo1 test01 
+sudo usermod -aG {nombre del grupo} test01
 ```
 Se usa la -a para no eliminar los que ya tenía.
 
 14. Elimina algunos grupos secundarios del usuario test01
 ```bash
-sudo gpasswd -d test01 grupoaeliminar
+sudo gpasswd -d test01 {grupo a eliminar}
 ```
 
 15. Bloquea al usuario test01. Luego intenta abrir una sesión... ¿puedes? ¿Por qué?
 ```bash
-sudo passwd -l test01
+sudo passwd -L test01
 ```
 No, porque con este comando hace que se caduque la contraseña.
 
 16. Desbloquea al usuario test01. ¿Se ha perdido algo de su información?
 ```bash
-sudo passwd -u test01
+sudo passwd -U test01
 ```
 No debería haber perdido información
 
@@ -220,12 +216,13 @@ Este comando te da opciones de escribir o modificar todos esos datos.
 
 18. Cambia la shell de test01 a una que no permita ejecutar comandos
 ```bash
-sudo chsh -s /bin/false test01
+sudo usermod -s /bin/false test01
+sudo usermod -s /usr/sbin/nologin test01
 ```
 
 19. Vuelve a dejarle a test01 su shell original
 ```bash
-sudo chsh -s /bin/bash test01
+sudo usermod -s /bin/bash test01
 ```
 
 20. Añade restricciones al usuario test01 de forma que tenga que cambiar la contraseña cada 15 días y que le avisen 3 días antes, dándole 2 días de margen para poder cambiar una contraseña caducada sin que se bloquee su cuenta. Además, la cuenta quedará deshabilitada el 30 de junio.
@@ -240,12 +237,13 @@ sudo chage -M 15 -W 3 -I 2 -E 2023-06-30 test01
 
 21. Elimina el usuario test01 con todo el contenido en su espacio personal. Ten en cuenta que test01 podría seguir conectado.
 ```bash
-sudo userdel -rf test01
+sudo pkill -9 -u test01
+sudo userdel -f -r test01
 ```
 
 22. ¿Qué pasaría si test01 siguiera conectado en el momento que se elimina su cuenta? ¿Podría seguir usando el equipo con normalidad? ¿Cómo harías para cerrar inmediatamente todos sus procesos que estuvieran aún en ejecución?
 ```bash
-sudo pkill -u test01 -9
+sudo pkill -9 -u test01
 ```
 
 
@@ -253,23 +251,25 @@ sudo pkill -u test01 -9
 
 1. ¿Por qué MS Windows distingue entre usuarios/grupos locales y globales?
 
-Windows distingue entre usuarios/grupos locales y globales para gestionar de manera eficiente los recursos y permisos dentro de un sistema. Los usuarios y grupos locales se aplican solo al sistema en el que están definidos, mientras que los usuarios y grupos globales pueden ser utilizados en toda la red de dominio.
+Para administrar de manera efectiva los recursos de la red y los recursos locas
 
 2. Muestra todos los usuarios locales de tu máquina virtual. ¿Cuál es la función de cada usuario?
 ```cmd
 net user
 ```
-Está Administrador, rcn, Utility, Invitado, .y cada usuario puede tener diferentes funciones dependiendo de cómo se configuren los permisos y las políticas de seguridad en el sistema.
+Algunos usuarios pueden ser administradores con privilegios elevados, mientras que otros pueden ser usuarios estándar con permisos limitados.
 
 3. Muestra información detallada del usuario que estás usando ahora mismo. ¿Qué significa cada línea? ¿A qué grupos perteneces?
 ```cmd
-net user rcn
+net user {user name}
 ```
 
 4. Muestra todos los grupos locales de tu máquina virtual. ¿Qué función tiene cada grupo (busca unos cuantos)?
 ```cmd
 net localgroup
 ```
+Administradores (usuarios con privilegios de administrador) <br>
+Usuarios (usuarios estándar), Invitados (acceso limitado)
 
 5. Muestra información detallada del grupo "Usuarios". ¿Quién pertenece a este grupo? Repite la operación para el grupo de "Administradores"
 ```cmd
@@ -300,12 +300,13 @@ Esto solicitará la contraseña sin mostrarla mientras se escribe.
 
 9. Prueba a abrir sesión con los usuarios creados. ¿Puedes acceder con todos? Si no puedes acceder con alguno(s), indica cuál es el problema y soluciónalo.
 ```cmd
-net user nombreusuario
+net user <nombre usuario>
 ```
 
 10. ¿A qué grupo(s) local(es) pertenecen los usuarios creados?
 ```cmd
-
+net localgroup
+Al de usuarios
 ```
 
 11. Crea un grupo local llamado Informática. Añade los tres usuarios anteriores a ese grupo y muestra la lista de usuarios del grupo para ver que así es.
@@ -314,59 +315,62 @@ net localgroup Informática /add
 net localgroup Informática test01 /add
 net localgroup Informática test02 /add
 net localgroup Informática test03 /add
+net localgroup Informática
 ```
 
 12. Haz que test03 sea administrador.
 ```cmd
-
+net localgroup Administradores test03 /add
 ```
 
 13. Haz que la cuenta de test01 caduque al final de 2023 y que tenga que cambiar la contraseña la próxima vez que inicie sesión.
 ```cmd
-
+net user test01 /expires:12/31/2023 /passwordchg:yes
 ```
 
 14. Desactiva al usuario test02.
 ```cmd
-
+net user test02 /active:no
 ```
 
 15. Haz que el usuario test03 NO pueda cambiar su contraseña, y que esta NO sea obligatoria.
 ```cmd
-
+net user test03 /passwordchg:no /passwordreq:no
 ```
 
 16. Prueba a iniciar de nuevo sesión con cada usuario... ¿qué sucede?
-```cmd
-
-```
+Ya no pide contraseña al usuario test3
 
 17. Indica el nombre completo del usuario test01 (invéntate uno) y añade comentarios a su cuenta.
 ```cmd
-
+net user test01 /fullname:”Rashi C" /comment:"prueba"
 ```
 
 18. Elimina al usuario test03 del grupo local de "Informática".
 ```cmd
-
+net localgroup Informática test03 /delete
 ```
 
 19. Muestra la configuración global de las cuentas (longitud mínima de las contraseñas, duración, bloqueos, etc.).
 ```cmd
-
+net accounts
 ```
 
 20. Modifica la configuración global para que todas las contraseñas tengan uan longitud mínima de 6 caracteres, se tengan que cambiar cada mes y no se puedan usar las últimas 3 contraseñas. 
 ```cmd
-
+net accounts /minpwlen:6 /maxpwage:30 /minpwage:1 /uniquepw:3
 ```
 
 21. Elimina el grupo local de "Informática". Muestra todos los grupos locales para asegurate de que está eliminado.
 ```cmd
-
+net localgroup Informática /del
+net localgroup
 ```
 
 22. Elimina todos los usuarios creados en estos ejercicios. Muestra todos los usuarios locales para asegurarte de que han sido eliminados.
 ```cmd
-
+net user test01 /del
+net user test02 /del
+net user test03 /del
+net localgroup
 ```
