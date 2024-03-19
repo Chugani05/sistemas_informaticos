@@ -21,7 +21,7 @@ a) Systemd <br> b) System III <br> c) System V <br> d) UpStart
 
 6. ¿Cuál es el principal comando que usa systemd para gestionar los servicios?
 
-Response: `Systemctl`
+Response: **`Systemctl`**
 
 7. Con systemd, ¿cómo veo la información básica del servicio (si está activo o no, si está habilitado o no, cuándo se inició, PID, consumo de memoria y CPU, etc.)
 
@@ -61,7 +61,7 @@ a) En consola cmd, con el comando: service info <br> b) En consola cmd, con el c
 
 16. ¿Cómo muestro la configuración de un servicio en la terminal cmd?
 
-a) sc config <br> b) Sc qc <br> c) sc show <br> d) sc sconfig
+a) sc config <br> b) **sc qc** <br> c) sc show <br> d) sc sconfig
 
 
 # USUARIOS Y GRUPOS
@@ -87,7 +87,7 @@ a) En la aplicación de configuración de cada dispositivo <br> b) Creando un en
 
 6. En GNU/Linux, si quiero cambiar la shell de arranque de un usuario, ¿cuál debo usar?
 
-a) usermod -c <br> b) usermod -g <br> c) usermod -s <br> d) usermod -L
+a) usermod -c <br> b) usermod -g <br> c) **usermod -s** <br> d) usermod -L
 
 7. En GNU/Linux, ¿cuál es correcto?
 
@@ -107,7 +107,7 @@ a) Cambiando la contraseña a user1 <br> b) Comprobando si user1 existe y mostra
 
 11. Quiero eliminar el usuario usr1 que tiene una sesión abierta, borrando todo el contenido de su directorio personal y finalizando inmediatamente todos sus procesos, ¿cómo lo hago?
 
-a) sudo userdel -r -f usr 1 && <br> b) sudo pkill -u usr1 -9 <br> c) sudo remove usr1 && <br> d) sudo xkill usr1 <br> e) sudo userdel usr1
+a) **sudo userdel -r -f usr 1 &&** <br> b) **sudo pkill -u usr1 -9** <br> c) sudo remove usr1 && <br> d) sudo xkill usr1 <br> e) sudo userdel usr1
 
 12. En GNU/Linux, ¿qué estoy haciendo con el siguiente comando? `sudo gpasswd -d AB`
 
@@ -119,7 +119,7 @@ a) `SU -` abrir la sesión como otro usuario <br> b) `who` Ver usuarios conectad
 
 14. Cómo muestro la información del usuario user1 en MS Windows
 
-a) net user user1 <br> b) net show user1 <br> c) net info user1 <br> d) net user1
+a) **net user user1** <br> b) net show user1 <br> c) net info user1 <br> d) net user1
 
 15. En MS Windows, ¿qué descripción del comando es FALSA?
 
