@@ -209,7 +209,7 @@ Ejemplo:
 
 - Añadir a administrador (y quitar de usuarios): `net localgroup Administradores /add prb2`: Agrega al usuario "prb2" al grupo de administradores y lo elimina del grupo de usuarios estándar.
 
-- Activar cuenta: `net user prb2 /active`:yes: Activa la cuenta del usuario "prb2".
+- Activar cuenta: `net user prb2 /active:yes`: Activa la cuenta del usuario "prb2".
 
 - Cambiar las horas de inicio de sesión: `net user prb2 /times`: Permite modificar el horario de inicio de sesión del usuario "prb2".
 

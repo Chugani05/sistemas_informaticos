@@ -84,14 +84,12 @@ schtasks /create /“tarea lunes” /tr “C:\ruta\miscript.bat” /sc once /d M
 
 2. Todos los días a las 16:30
 ```cmd
-schtasks /create /“tarea diaria” /tr “C:\ruta\miscript.bat” /sc daily /st
-16:30
+schtasks /create /“tarea diaria” /tr “C:\ruta\miscript.bat” /sc daily /st 16:30
 ```
 
 3. Todas las semanas a las 23:00
 ```cmd
-schtasks /create /“tarea semanal” /tr “C:\ruta\miscript.bat” /sc weekly /
-st 23:50
+schtasks /create /“tarea semanal” /tr “C:\ruta\miscript.bat” /sc weekly /st 23:50
 ```
 
 4. Todos los meses a las 11:00
@@ -254,48 +252,55 @@ sudo pkill -u test01 -9
 ## MS Windows
 
 1. ¿Por qué MS Windows distingue entre usuarios/grupos locales y globales?
-```cmd
 
-```
+Windows distingue entre usuarios/grupos locales y globales para gestionar de manera eficiente los recursos y permisos dentro de un sistema. Los usuarios y grupos locales se aplican solo al sistema en el que están definidos, mientras que los usuarios y grupos globales pueden ser utilizados en toda la red de dominio.
 
 2. Muestra todos los usuarios locales de tu máquina virtual. ¿Cuál es la función de cada usuario?
 ```cmd
-
+net user
 ```
+Está Administrador, rcn, Utility, Invitado, .y cada usuario puede tener diferentes funciones dependiendo de cómo se configuren los permisos y las políticas de seguridad en el sistema.
 
 3. Muestra información detallada del usuario que estás usando ahora mismo. ¿Qué significa cada línea? ¿A qué grupos perteneces?
 ```cmd
-
+net user rcn
 ```
 
 4. Muestra todos los grupos locales de tu máquina virtual. ¿Qué función tiene cada grupo (busca unos cuantos)?
 ```cmd
-
+net localgroup
 ```
 
 5. Muestra información detallada del grupo "Usuarios". ¿Quién pertenece a este grupo? Repite la operación para el grupo de "Administradores"
 ```cmd
-
+net localgroup Usuarios
 ```
+Tiene como comentario: “Los usuarios no pueden hacer cambios accidentales o intencionados en el sistema y pueden ejecutar la mayoría de aplicaciones.” Pertenecen: “rcn NT AUTHORITY\INTERACTIVE NT AUTHORITY\Usuarios autentificados”
+
+```cmd
+net localgroup Administradores
+```
+Tiene como comentario “Los administradores tienen acceso completo y sin restricciones al equipo o dominio” Y pertenecen: Administrador rcn
 
 6. Crea un usuario test01 SIN indicar contraseña
 ```cmd
-
+net user test01 /add /passwordreq:no
 ```
 
 7. Crea un usuario test02 indicando la contraseña en el propio comando
 ```cmd
-
+net user test02 contraseña /add
 ```
 
 8. Crea un usuario test03 y solicita que se indique la contraseña por teclado, sin mostrarla
 ```cmd
-
+net user test03 * /add
 ```
+Esto solicitará la contraseña sin mostrarla mientras se escribe.
 
 9. Prueba a abrir sesión con los usuarios creados. ¿Puedes acceder con todos? Si no puedes acceder con alguno(s), indica cuál es el problema y soluciónalo.
 ```cmd
-
+net user nombreusuario
 ```
 
 10. ¿A qué grupo(s) local(es) pertenecen los usuarios creados?
@@ -305,7 +310,10 @@ sudo pkill -u test01 -9
 
 11. Crea un grupo local llamado Informática. Añade los tres usuarios anteriores a ese grupo y muestra la lista de usuarios del grupo para ver que así es.
 ```cmd
-
+net localgroup Informática /add
+net localgroup Informática test01 /add
+net localgroup Informática test02 /add
+net localgroup Informática test03 /add
 ```
 
 12. Haz que test03 sea administrador.
